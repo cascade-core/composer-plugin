@@ -16,6 +16,10 @@ class Installer extends LibraryInstaller
 		$extra = $package->getExtra();
 		$plugin = @ $extra['plugin'];
 
+		if ($type == 'cascade-core') {
+			return 'core';
+		}
+
 		if ($plugin == '') {
 			throw new \Exception('Plugin name not specified! Set extra.plugin option in composer.json to valid plugin name.');
 		}
@@ -32,7 +36,7 @@ class Installer extends LibraryInstaller
 	 */
 	public function supports($packageType)
 	{
-		return $packageType == 'cascade-plugin';
+		return $packageType == 'cascade-plugin' || $packageType == 'cascade-core';
 	}
 
 }
