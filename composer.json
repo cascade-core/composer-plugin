@@ -4,7 +4,7 @@
     "license": "MIT",
     "description": "A Composer installer",
     "autoload": {
-        "psr-0": { "Cascade\\ComposerPlugin\\": "src/" }
+        "psr-4": { "Cascade\\ComposerPlugin\\": "src/" }
     },
     "extra": {
         "class": "Cascade\\ComposerPlugin\\Installer"
